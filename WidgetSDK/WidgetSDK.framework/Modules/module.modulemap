@@ -1,0 +1,10 @@
+framework module WidgetSDK {
+    umbrella header "WidgetSDK-umbrella.h"
+    
+    export *
+    module * { export * }
+}
+
+module WidgetSDK.Swift {
+    header "WidgetSDK-Swift.h"
+}
