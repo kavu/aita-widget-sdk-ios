@@ -24,6 +24,7 @@
 		D5193B0D1BD3F4D4006D69F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5193B0B1BD3F4D4006D69F6 /* Main.storyboard */; };
 		D5193B0F1BD3F4D4006D69F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5193B0E1BD3F4D4006D69F6 /* Assets.xcassets */; };
 		D5193B121BD3F4D4006D69F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5193B101BD3F4D4006D69F6 /* LaunchScreen.storyboard */; };
+		D55B932C1BE4D92C00A5A214 /* AAChecklistWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = D55B932B1BE4D92C00A5A214 /* AAChecklistWidget.m */; };
 		D59B89781BE3E5E600CBC805 /* WidgetSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59B89771BE3E5E600CBC805 /* WidgetSDK.framework */; };
 		D59B897B1BE3E8E600CBC805 /* WidgetSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D59B89771BE3E5E600CBC805 /* WidgetSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D5D510011BD9E633001B2A0E /* Model-Samples.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D510001BD9E633001B2A0E /* Model-Samples.swift */; };
@@ -68,6 +69,9 @@
 		D5193B0E1BD3F4D4006D69F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5193B111BD3F4D4006D69F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5193B131BD3F4D4006D69F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D55B93291BE4D92B00A5A214 /* AppInTheAirWidgetSDK-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppInTheAirWidgetSDK-Bridging-Header.h"; sourceTree = "<group>"; };
+		D55B932A1BE4D92C00A5A214 /* AAChecklistWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAChecklistWidget.h; sourceTree = "<group>"; };
+		D55B932B1BE4D92C00A5A214 /* AAChecklistWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAChecklistWidget.m; sourceTree = "<group>"; };
 		D59B89771BE3E5E600CBC805 /* WidgetSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WidgetSDK.framework; sourceTree = "<group>"; };
 		D5D510001BD9E633001B2A0E /* Model-Samples.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Model-Samples.swift"; sourceTree = "<group>"; };
 		D5D5100C1BD9EC6D001B2A0E /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
@@ -164,9 +168,20 @@
 				D5193B101BD3F4D4006D69F6 /* LaunchScreen.storyboard */,
 				D5193B131BD3F4D4006D69F6 /* Info.plist */,
 				D5D5100C1BD9EC6D001B2A0E /* CoreDataHelper.swift */,
+				D55B93281BE4D91900A5A214 /* Objc Checklist Widget */,
 				D50BDA3F1BE3DC6D0061A151 /* Checklist Widget */,
 			);
 			path = AppInTheAirWidgetSDK;
+			sourceTree = "<group>";
+		};
+		D55B93281BE4D91900A5A214 /* Objc Checklist Widget */ = {
+			isa = PBXGroup;
+			children = (
+				D55B93291BE4D92B00A5A214 /* AppInTheAirWidgetSDK-Bridging-Header.h */,
+				D55B932A1BE4D92C00A5A214 /* AAChecklistWidget.h */,
+				D55B932B1BE4D92C00A5A214 /* AAChecklistWidget.m */,
+			);
+			path = "Objc Checklist Widget";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +316,7 @@
 				D50BDA4C1BE3DC6D0061A151 /* ChecklistCell.swift in Sources */,
 				D5D5100D1BD9EC6D001B2A0E /* CoreDataHelper.swift in Sources */,
 				D50BDA501BE3DC6D0061A151 /* ChecklistWidgetCell.swift in Sources */,
+				D55B932C1BE4D92C00A5A214 /* AAChecklistWidget.m in Sources */,
 				D50BDA541BE3DC6D0061A151 /* Model.xcdatamodeld in Sources */,
 				D50BDA4F1BE3DC6D0061A151 /* ChecklistWidget.swift in Sources */,
 				D5193B081BD3F4D4006D69F6 /* AppDelegate.swift in Sources */,
@@ -431,6 +447,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mobi.appintheair.sdk.AppInTheAirWidgetSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AppInTheAirWidgetSDK/Objc Checklist Widget/AppInTheAirWidgetSDK-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -451,6 +468,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = mobi.appintheair.sdk.AppInTheAirWidgetSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AppInTheAirWidgetSDK/Objc Checklist Widget/AppInTheAirWidgetSDK-Bridging-Header.h";
 			};
 			name = Release;
 		};
