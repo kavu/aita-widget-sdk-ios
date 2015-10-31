@@ -433,14 +433,4 @@ SWIFT_PROTOCOL("_TtP9WidgetSDK10TripWidget_")
 @property (nonatomic, strong) AAPopupViewController * __nullable aa_popupViewController;
 @end
 
-
-
-/// Base class for all widget cells
-SWIFT_CLASS("_TtC9WidgetSDK10WidgetCell")
-@interface WidgetCell : UICollectionViewCell
-- (void)awakeFromNib;
-- (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
 #pragma clang diagnostic pop

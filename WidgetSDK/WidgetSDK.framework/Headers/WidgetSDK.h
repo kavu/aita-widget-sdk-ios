@@ -20,5 +20,6 @@ FOUNDATION_EXPORT const unsigned char WidgetSDKVersionString[];
 #import "Trip.h"
 #import "FlightInfo.h"
 #import "UIImage+ImageEffects.h"
+#import "WidgetCell.h"
 
 #import "WidgetSDK-Swift.h"
