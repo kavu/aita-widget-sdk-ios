@@ -49,6 +49,16 @@ extension Airline {
     }
 }
 
+extension Aircraft {
+    class var sampleAircraft: Aircraft {
+        let aircraft = Aircraft()
+        aircraft.model = "F100"
+        aircraft.name = "Fokker 100"
+        aircraft.code = "100"
+        return aircraft
+    }
+}
+
 extension FlightInfo {
     class var sampleFlight: FlightInfo {
         let flight = FlightInfo()
@@ -56,6 +66,8 @@ extension FlightInfo {
         flight.airportDestination = Airport.sampleAirport_JFK
         flight.airlineCode = "DL"
         flight.airline = Airline.sampleAirline
+        flight.aircraft = "100"
+        flight.aircraftObject = Aircraft.sampleAircraft
         flight.number = "100"
         flight.departureDatetime = NSDate(timeIntervalSinceNow: 3600)
         flight.arrivalDatetime = NSDate(timeIntervalSinceNow: 12*3600)
