@@ -38,12 +38,24 @@ extension Airport {
     }
 }
 
+extension Airline {
+    class var sampleAirline: Airline {
+        let airline = Airline()
+        airline.code = "DL"
+        airline.iataCode = "DL"
+        airline.icaoCode = "DAL"
+        airline.name = "Delta Airlines"
+        return airline
+    }
+}
+
 extension FlightInfo {
     class var sampleFlight: FlightInfo {
         let flight = FlightInfo()
         flight.airportOrigin = Airport.sampleAirport_SVO
         flight.airportDestination = Airport.sampleAirport_JFK
-        flight.airlineCode = "AA"
+        flight.airlineCode = "DL"
+        flight.airline = Airline.sampleAirline
         flight.number = "100"
         flight.departureDatetime = NSDate(timeIntervalSinceNow: 3600)
         flight.arrivalDatetime = NSDate(timeIntervalSinceNow: 12*3600)
