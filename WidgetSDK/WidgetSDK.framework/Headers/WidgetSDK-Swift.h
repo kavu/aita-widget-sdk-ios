@@ -239,7 +239,6 @@ SWIFT_PROTOCOL("_TtP9WidgetSDK10AitaWidget_")
 
 @class Airport;
 
-@protocol TripWidget;
 
 /// Should be implemented if the widget is intended to be presented on the Airport Feed
 SWIFT_PROTOCOL("_TtP9WidgetSDK13AirportWidget_")
@@ -299,7 +298,7 @@ SWIFT_CLASS("_TtC9WidgetSDK9Dashboard")
 SWIFT_CLASS("_TtC9WidgetSDK16DashboardManager")
 @interface DashboardManager : NSObject
 + (void)initialize;
-+ (void)registerWidgetClass:(Class <TripWidget> __nonnull)type;
++ (void)registerWidgetClass:(Class <AitaWidget> __nonnull)type;
 - (void)observeValueForKeyPath:(NSString * __nullable)keyPath ofObject:(id __nullable)object change:(NSDictionary<NSString *, id> * __nullable)change context:(void * __null_unspecified)context;
 @end
 
