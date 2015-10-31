@@ -131,7 +131,8 @@ If you want to start your project from scratch, there are few simple steps to do
 
 1. Add `WidgetSDK.framework` and `WidgetSDKBundle.bundle` to your project.
 2. Add `WidgetSDK.framework` to your target's Linked frameworks and libraries and Embedded binaries.
-3. Add the following code to your Podfile
+3. Set Yes to "Embedded content contains Swift Code" in your target's settings
+4. Add the following code to your Podfile
 
 ```
 use_frameworks!
