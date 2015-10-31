@@ -188,13 +188,6 @@ SWIFT_CLASS("_TtC9WidgetSDK18AAWidgetController")
 - (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-SWIFT_CLASS("_TtC9WidgetSDK12AitaUserInfo")
-@interface AitaUserInfo : NSObject
-+ (NSString * __nonnull)userID;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
 @class Dashboard;
 @class UICollectionViewCell;
 
@@ -244,6 +237,24 @@ SWIFT_PROTOCOL("_TtP9WidgetSDK10AitaWidget_")
 @property (nonatomic, readonly) BOOL canBeDisplayed;
 @end
 
+@class Airport;
+
+
+/// Should be implemented if the widget is intended to be presented on the Airport Feed
+SWIFT_PROTOCOL("_TtP9WidgetSDK13AirportWidget_")
+@protocol AirportWidget <AitaWidget>
+@property (nonatomic, strong) Airport * __null_unspecified airport;
+- (nonnull instancetype)initWithDashboard:(Dashboard * __nonnull)dashboard airport:(Airport * __nonnull)airport;
+@end
+
+
+SWIFT_CLASS("_TtC9WidgetSDK12AitaUserInfo")
+@interface AitaUserInfo : NSObject
++ (NSString * __nonnull)userID;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 
 SWIFT_CLASS("_TtC9WidgetSDK9Dashboard")
 @interface Dashboard : AAViewController
@@ -287,6 +298,7 @@ SWIFT_CLASS("_TtC9WidgetSDK9Dashboard")
 SWIFT_CLASS("_TtC9WidgetSDK16DashboardManager")
 @interface DashboardManager : NSObject
 + (void)initialize;
++ (void)registerWidgetClass:(Class <TripWidget> __nonnull)type;
 - (void)observeValueForKeyPath:(NSString * __nullable)keyPath ofObject:(id __nullable)object change:(NSDictionary<NSString *, id> * __nullable)change context:(void * __null_unspecified)context;
 @end
 
@@ -368,6 +380,19 @@ SWIFT_CLASS("_TtC9WidgetSDK13TripDashboard")
 - (void)presentWidgetController:(UIViewController * __nonnull)widgetController animated:(BOOL)animated;
 - (nonnull instancetype)initWithNibName:(NSString * __nullable)nibNameOrNil bundle:(NSBundle * __nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * __nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+/// Should be implemented if the widget is intended to be presented on the Travel Feed
+SWIFT_PROTOCOL("_TtP9WidgetSDK10TripWidget_")
+@protocol TripWidget <AitaWidget>
+@property (nonatomic, strong) Trip * __null_unspecified trip;
+@property (nonatomic, strong) FlightInfo * __null_unspecified flight;
+- (nonnull instancetype)initWithDashboard:(Dashboard * __nonnull)dashboard trip:(Trip * __nonnull)trip flight:(FlightInfo * __nonnull)flight;
+
+/// Most of the times should be true. false is used only for the most essential widgets which couldn't be hidden by the user
+@property (nonatomic, readonly) BOOL canBeHidden;
 @end
 
 
