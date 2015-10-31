@@ -239,6 +239,7 @@ SWIFT_PROTOCOL("_TtP9WidgetSDK10AitaWidget_")
 
 @class Airport;
 
+@protocol TripWidget;
 
 /// Should be implemented if the widget is intended to be presented on the Airport Feed
 SWIFT_PROTOCOL("_TtP9WidgetSDK13AirportWidget_")
