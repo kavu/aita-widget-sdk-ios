@@ -4,5 +4,6 @@
 use_frameworks!
 inhibit_all_warnings!
 
-pod 'FLKAutoLayout', '~> 0.2.1'
-
+target 'AppInTheAirWidgetSDK' do
+  pod 'FLKAutoLayout', '~> 0.2.1'
+end
